@@ -4,6 +4,7 @@ import {
   UserOutlined,
   ApartmentOutlined,
   DashboardOutlined,
+  LogoutOutlined
 } from '@ant-design/icons';
 import { Link } from 'react-router-dom'; // Import React Router's Link component
 
@@ -30,6 +31,12 @@ const items = [
     label: 'Beds',
     path: '/beds', // Define the path for this menu item
   },
+  {
+    key: 'logout',
+    icon: <LogoutOutlined />,
+    label: 'Logout',
+    path: '/logout', // Define the path for this menu item
+  }
 ];
 
 export default function Slider({}: Props) {
@@ -49,7 +56,7 @@ export default function Slider({}: Props) {
         collapsed={collapsed}
         onCollapse={(value) => setCollapsed(value)}
       >
-        <div className="demo-logo-vertical" />
+        <div className="demo-logo-vertical">Hotel Guru</div>
         <Menu theme="dark" mode="inline" defaultSelectedKeys={['dashboard']}>
           {items.map((item) => (
             <Menu.Item key={item.key} icon={item.icon}>

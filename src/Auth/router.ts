@@ -43,7 +43,7 @@ const router = createBrowserRouter([
             await AuthProvider.signout();
             return redirect("/");
         },
-    },
+    }
 ]);
 
 export default router;

@@ -3,4 +3,10 @@
   margin: 16px;
   background: rgba(255,255,255,.2);
   border-radius: 6px;
+  justify-content: center;
+  align-items: center;
+  display: flex;
+  color: white;
+  font-weight: 700;
+  font-family: cursive;
 }
