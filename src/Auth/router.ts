@@ -11,6 +11,7 @@ import { loginLoader } from './loginLoader';
 import LoginPage from '../Pages/Login/LoginPage';
 import loginAction from '../Pages/Login/loginAction';
 import DashboardPage from '../Pages/Dashboard/DashboardPage';
+import Page404 from '../Pages/errors/404Page';
 
 const router = createBrowserRouter([
     {
@@ -43,6 +44,10 @@ const router = createBrowserRouter([
             await AuthProvider.signout();
             return redirect("/");
         },
+    },
+    {
+        path: "*",
+        Component: Page404
     }
 ]);
 

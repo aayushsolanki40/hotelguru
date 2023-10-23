@@ -10,3 +10,7 @@
   font-weight: 700;
   font-family: cursive;
 }
+
+.ant-layout-content{
+  min-height: calc(100vh - 155px);
+}

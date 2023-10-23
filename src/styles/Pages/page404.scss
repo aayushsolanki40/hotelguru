@@ -1,0 +1,21 @@
+.page404{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-width: 100vw;
+    min-height: 100vh;
+    flex-direction: column;
+
+    .big_text{
+        display: block;
+        font-size: 40px;
+        font-weight: 600;
+        font-family: math;
+    }
+
+    .title_text{
+        font-size: 17px;
+        font-weight: 600;
+        font-family: math;
+    }
+}

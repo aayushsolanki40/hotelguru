@@ -35,7 +35,7 @@ const LayoutPage: React.FC = () => {
         <Content style={{ margin: '24px 16px 0', overflow: 'initial' }}>
           <Outlet />
         </Content>
-        <Footer style={{ textAlign: 'center' }}>Ant Design ©2023 Created by Ant UED</Footer>
+        <Footer style={{ textAlign: 'center' }}>OpenAdminLTE ©2023 Created by <a href='https://opensourcejet.com'>OpenSourceJet.com</a></Footer>
       </Layout>
     </Layout>
   );
