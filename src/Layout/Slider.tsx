@@ -6,11 +6,12 @@ import {
   DashboardOutlined,
   LogoutOutlined
 } from '@ant-design/icons';
-import { Link } from 'react-router-dom'; // Import React Router's Link component
+import { Link, useLocation } from 'react-router-dom'; // Import React Router's Link component
 
 const { Sider } = Layout;
 
 type Props = {};
+
 
 const items = [
   {
@@ -41,6 +42,7 @@ const items = [
 
 export default function Slider({}: Props) {
   const [collapsed, setCollapsed] = useState<boolean>(false);
+  const location = useLocation();
 
   return (
     <div>
@@ -57,7 +59,7 @@ export default function Slider({}: Props) {
         onCollapse={(value) => setCollapsed(value)}
       >
         <div className="demo-logo-vertical">Hotel Guru</div>
-        <Menu theme="dark" mode="inline" defaultSelectedKeys={['dashboard']}>
+        <Menu theme="dark" mode="inline" defaultSelectedKeys={[items.filter(e => e.path === location.pathname)[0].key || 'dashboard']}>
           {items.map((item) => (
             <Menu.Item key={item.key} icon={item.icon}>
               <Link to={item.path}>{item.label}</Link>

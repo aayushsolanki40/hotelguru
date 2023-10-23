@@ -12,6 +12,8 @@ import LoginPage from '../Pages/Login/LoginPage';
 import loginAction from '../Pages/Login/loginAction';
 import DashboardPage from '../Pages/Dashboard/DashboardPage';
 import Page404 from '../Pages/errors/404Page';
+import CustomerPage from '../Pages/Customers/CustomersPage';
+import BedsPage from '../Pages/Beds/BedsPage';
 
 const router = createBrowserRouter([
     {
@@ -28,6 +30,16 @@ const router = createBrowserRouter([
                 path: "/dashboard",
                 loader: protectedLoader,
                 Component: DashboardPage,
+            },
+            {
+                path: "/customers",
+                loader: protectedLoader,
+                Component: CustomerPage,
+            },
+            {
+                path: "/beds",
+                loader: protectedLoader,
+                Component: BedsPage,
             }
         ],
     },
