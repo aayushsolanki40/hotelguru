@@ -1,0 +1,38 @@
+.custom-input{
+    padding: 4px 12px 7px 12px !important;
+    background-color: transparent;
+    border: 1px solid #3173eb;;
+    border-radius: 3px;
+    box-shadow: 0px 0px 6px 0px darkgray;
+    position: relative;
+
+    .input-title{
+        font-size: 14px;
+        font-family: sans-serif;
+        // top: 50%;
+        // position: absolute;
+        // transform: translateY(-50%);
+        // transition: 3s linear cubic-bezier(0.23, 1, 0.320, 1);
+    }
+
+    // &:hover{
+    //     .input-title{
+    //         top: initial;
+    //         position: initial;
+    //         transform: none;
+    //         transition: 3s linear;
+    //     }
+    // }
+
+    .input-box > input{
+        outline: none;
+        border: none;
+        background: none;
+        width: 100%;
+        font-size: 14px;
+    }
+
+    &:hover{
+        box-shadow: 0px 0px 4px 0px darkblue;
+    }
+}

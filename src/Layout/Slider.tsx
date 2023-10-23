@@ -59,7 +59,7 @@ export default function Slider({}: Props) {
         onCollapse={(value) => setCollapsed(value)}
       >
         <div className="demo-logo-vertical">Hotel Guru</div>
-        <Menu theme="dark" mode="inline" defaultSelectedKeys={[items.filter(e => e.path === location.pathname)[0].key || 'dashboard']}>
+        <Menu theme="dark" mode="inline" defaultSelectedKeys={[items.filter(e => e.path === location.pathname)[0]?.key || 'dashboard']}>
           {items.map((item) => (
             <Menu.Item key={item.key} icon={item.icon}>
               <Link to={item.path}>{item.label}</Link>

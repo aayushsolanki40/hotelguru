@@ -9,8 +9,8 @@ interface AuthProvider {
  * This represents some generic auth provider API, like Firebase.
  */
 export const AuthProvider: AuthProvider = {
-  isAuthenticated: true,
-  username: 'Admin',
+  isAuthenticated: false,
+  username: '',
   async signin(username: string) {
     await new Promise((r) => setTimeout(r, 500)); // fake delay
     AuthProvider.isAuthenticated = true;
