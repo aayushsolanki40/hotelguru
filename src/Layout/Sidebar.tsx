@@ -10,8 +10,10 @@ import { Link, useLocation } from 'react-router-dom'; // Import React Router's L
 
 const { Sider } = Layout;
 
-type Props = {};
-
+type Props = {
+  collapsed: boolean,
+  setIsCollapsed: (state: boolean) => void
+};
 
 const items = [
   {
@@ -40,8 +42,8 @@ const items = [
   }
 ];
 
-export default function Slider({}: Props) {
-  const [collapsed, setCollapsed] = useState<boolean>(false);
+export default function Sidebar({ collapsed, setIsCollapsed }: Props) {
+  // const [collapsed, setCollapsed] = useState<boolean>(false);
   const location = useLocation();
 
   return (
@@ -56,9 +58,9 @@ export default function Slider({}: Props) {
         }}
         collapsible
         collapsed={collapsed}
-        onCollapse={(value) => setCollapsed(value)}
+        onCollapse={(value) => setIsCollapsed(value)}
       >
-        <div className="demo-logo-vertical">Hotel Guru</div>
+        <div className="demo-logo-vertical" style={{ transition: 'all 0.2s' }}>{collapsed? 'HG': 'Hotel Guru'}</div>
         <Menu theme="dark" mode="inline" defaultSelectedKeys={[items.filter(e => e.path === location.pathname)[0]?.key || 'dashboard']}>
           {items.map((item) => (
             <Menu.Item key={item.key} icon={item.icon}>

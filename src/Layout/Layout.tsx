@@ -1,37 +1,38 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Layout, Menu, theme } from 'antd';
-import Slider from './Slider';
 import { Outlet } from 'react-router-dom';
+import Sidebar from './Sidebar';
 
 const { Header, Content, Footer } = Layout;
 
 const LayoutPage: React.FC = () => {
+  const [collapsed, setCollapsed] = useState<boolean>(false);
   const {
     token: { colorBgContainer },
   } = theme.useToken();
 
   return (
     <Layout hasSider>
-      <Slider/>
-      <Layout className="site-layout" style={{ marginLeft: 200 }}>
-      <Header
-        style={{
-          position: 'sticky',
-          top: 0,
-          zIndex: 1,
-          width: '100%',
-          display: 'flex',
-          alignItems: 'center',
-        }}
-      >
-        <div className="demo-logo" />
-        <Menu
-          theme="dark"
-          mode="horizontal"
-          defaultSelectedKeys={['2']}
+      <Sidebar collapsed={collapsed} setIsCollapsed={setCollapsed} />
+      <Layout className="site-layout" style={{ marginLeft: collapsed ? '80px' : '200px', transition: 'all 0.2s' }}>
+        <Header
+          style={{
+            position: 'sticky',
+            top: 0,
+            zIndex: 1,
+            width: '100%',
+            display: 'flex',
+            alignItems: 'center',
+          }}
         >
-        </Menu>
-      </Header>
+          <div className="demo-logo" />
+          <Menu
+            theme="dark"
+            mode="horizontal"
+            defaultSelectedKeys={['2']}
+          >
+          </Menu>
+        </Header>
         <Content style={{ margin: '24px 16px 0', overflow: 'initial' }}>
           <Outlet />
         </Content>

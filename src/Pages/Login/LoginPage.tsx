@@ -26,7 +26,7 @@ function LoginPage() {
                     <Input type="text" name="username" onClick={()=> {}} placeholder="Please enter username" title="Email" value="" />
                     <Input type="text" name="password" onClick={()=> {}} placeholder="Please enter password" title="Password" value="" />
                     <button className="login-btn" type="submit" disabled={isLoggingIn}>
-                        {isLoggingIn ? "Logging in..." : "Countinue"}
+                        {isLoggingIn ? "Logging in..." : "Continue"}
                     </button>
                     {actionData && actionData.error ? (
                         <p style={{ color: "red" }}>{actionData.error}</p>
